@@ -1,0 +1,21 @@
+<div class="timer-container">
+  <div class="time-block">
+    <div class="number">{{ days }}</div>
+    <div class="label">Дні</div>
+  </div>
+  <span class="separator">:</span>
+  <div class="time-block">
+    <div class="number">{{ hours | number: '2.0' }}</div>
+    <div class="label">Години</div>
+  </div>
+  <span class="separator">:</span>
+  <div class="time-block">
+    <div class="number">{{ minutes | number: '2.0' }}</div>
+    <div class="label">Хвилини</div>
+  </div>
+  <span class="separator">:</span>
+  <div class="time-block">
+    <div class="number">{{ seconds | number: '2.0' }}</div>
+    <div class="label">Секунди</div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.timer-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0 22px;
+  padding: 12px 24px;
+  border-radius: 32px;
+  border: 1px solid  #000;
+  .number {
+    font-size: 32px;
+  }
+  .label {
+    font-size: 11px;
+  }
+}
+.separator {
+  font-size: 32px;
+}
+
