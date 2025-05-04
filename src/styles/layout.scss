@@ -1,9 +1,11 @@
 @use "./variables" as *;
+
 .container {
   max-width: 1220px;
   margin: 0 auto;
   padding: 20px;
 }
+ // Sections
 
 header {
 .start-info-block {
@@ -93,41 +95,6 @@ header {
       bottom: 0;
       left: -262px;
     }
-  }
-}
-
-// UI elements
-
-button {
-  padding: 21px 0;
-  width: 384px;
-  text-align: center;
-  position: relative;
-  background: $purple400;
-  border-radius: 48px;
-  border: 0;
-  font-size: 24px;
-  transition: all 0.3s;
-  &:hover {
-    background: radial-gradient(94.79% 94.79% at 0% 21.83%, #E5D3E9 1.49%, #F974AB 84.26%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-    radial-gradient(40.23% 40.23% at 3.12% 20.95%, rgba(255, 255, 255, 0.32) 0%, rgba(249, 116, 171, 0.32) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    color: $white;
-  }
-  .discount {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(180deg, $pink700 0%, $pink650 100%);
-    color: $white;
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translate(50%, -50%) rotate(-14deg);
-    font-weight: 500;
-    font-size: 24px;
   }
 }
 
@@ -421,7 +388,6 @@ button {
   }
 }
 
-
 .join-us-adds {
   .info-block {
     max-width: 720ox;
@@ -474,6 +440,41 @@ button {
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
     }
+  }
+}
+
+// UI elements
+
+button {
+  padding: 21px 0;
+  width: 384px;
+  text-align: center;
+  position: relative;
+  background: $purple400;
+  border-radius: 48px;
+  border: 0;
+  font-size: 24px;
+  transition: all 0.3s;
+  &:hover {
+    background: radial-gradient(94.79% 94.79% at 0% 21.83%, #E5D3E9 1.49%, #F974AB 84.26%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(40.23% 40.23% at 3.12% 20.95%, rgba(255, 255, 255, 0.32) 0%, rgba(249, 116, 171, 0.32) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    color: $white;
+  }
+  .discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(180deg, $pink700 0%, $pink650 100%);
+    color: $white;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50%, -50%) rotate(-14deg);
+    font-weight: 500;
+    font-size: 24px;
   }
 }
 
