@@ -22,7 +22,7 @@
                 "node_modules"
               ]
             },
-            "outputPath": "dist/olga-site",
+            "outputPath": "dist/olga-site/browser",
             "baseHref": "/oglalanding/",
             "index": "src/index.html",
             "browser": "src/main.ts",
