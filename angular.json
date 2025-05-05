@@ -63,10 +63,6 @@
                 }
               ],
               "outputHashing": "all",
-              "buildTarget": "olga-site:build:production",
-              "optimization": true,
-              "sourceMap": false,
-              "buildOptimizer": true
             },
             "development": {
               "optimization": false,
@@ -81,6 +77,9 @@
           "configurations": {
             "production": {
               "buildTarget": "olga-site:build:production",
+              "optimization": true,
+              "sourceMap": false,
+              "buildOptimizer": true
 
             },
             "development": {
