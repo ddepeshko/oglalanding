@@ -62,7 +62,11 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "buildTarget": "olga-site:build:production",
+              "optimization": true,
+              "sourceMap": false,
+              "buildOptimizer": true
             },
             "development": {
               "optimization": false,
@@ -76,7 +80,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "olga-site:build:production"
+              "buildTarget": "olga-site:build:production",
+
             },
             "development": {
               "buildTarget": "olga-site:build:development"
