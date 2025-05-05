@@ -1,5 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DecimalPipe} from '@angular/common';
+import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {DecimalPipe, isPlatformBrowser} from '@angular/common';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -10,22 +11,26 @@ import {DecimalPipe} from '@angular/common';
   styleUrl: './countdown-timer.component.scss',
   standalone: true,
 })
-export class CountdownTimerComponent  implements OnInit, OnDestroy {
+export class CountdownTimerComponent implements OnInit, OnDestroy {
   targetDate = new Date('2025-05-15T00:00:00');
-  intervalId: any;
+  subscription: Subscription = new Subscription();
 
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
-    this.updateTime();
-    // this.intervalId = setInterval(() => this.updateTime(), 1000);
+    if (isPlatformBrowser(this.platformId)) {
+      this.subscription = interval(1000).subscribe(() => {
+        this.updateTime();
+      });
+    }
   }
 
   ngOnDestroy() {
-    clearInterval(this.intervalId);
+    this.subscription.unsubscribe();
   }
 
   updateTime() {
