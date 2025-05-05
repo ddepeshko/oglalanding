@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/olga-site/server/main.js",
-      "use": "@vercel/node"
+      "src": "dist/olga-site/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/olga-site/server/main.js"
+      "dest": "/dist/olga-site/$1"
     }
   ]
 }
