@@ -23,7 +23,7 @@
               ]
             },
             "outputPath": "dist/olga-site",
-            "baseHref": "/oglalanding/",
+            "baseHref": "/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
