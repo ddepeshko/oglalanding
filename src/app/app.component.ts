@@ -20,7 +20,6 @@ import {CountdownTimerComponent} from './components/countdown-timer/countdown-ti
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
-  title = 'olga-site';
   isBrowser = false;
   public baseProgramList = [
     'Постановка Цілі. Точка А. Заміри. Текстове завдання.',
@@ -43,7 +42,6 @@ export class AppComponent implements AfterViewInit {
     'Доступ до курсу  2 місяці.',
 
   ];
-
   public resultsViewItemConfig = [
     {
       icon: 'assets/icons/sort-down-icon.svg',
@@ -74,7 +72,7 @@ export class AppComponent implements AfterViewInit {
       text: 'Захопливі погляди від чоловіків'
     },
   ]
-  slides = [
+  public slides = [
     {
       photo: 'assets/images/user-1.png',
       name: 'Вікторія',
@@ -99,7 +97,7 @@ export class AppComponent implements AfterViewInit {
         'Мінус 2 кг, легкість у тілі та енергія!'
     },
   ];
-  questions = [
+  public questions = [
     {
       title: 'Немає часу на курс. Що робити?',
       description: 'Уроки курсу легкі та цікаві, займають мінімум часу. \n' +
@@ -131,6 +129,7 @@ export class AppComponent implements AfterViewInit {
   ]
 
   @ViewChild('swiperEl', { static: false }) swiperEl!: ElementRef;
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {
@@ -139,7 +138,7 @@ export class AppComponent implements AfterViewInit {
       });
     }
   }
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     if (this.isBrowser && this.swiperEl?.nativeElement) {
       setTimeout(() => {
         this.swiperEl.nativeElement.swiper?.update();
@@ -147,16 +146,16 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  nextSlide(): void {
+  public nextSlide(): void {
     this.swiperEl?.nativeElement.swiper?.slideNext();
   }
 
-  prevSlide(): void {
+  public prevSlide(): void {
     this.swiperEl?.nativeElement.swiper?.slidePrev();
   }
 
 
-  toggleAnswer(questionTitle: HTMLDivElement):void {
+  public toggleAnswer(questionTitle: HTMLDivElement):void {
     questionTitle.classList.toggle('selected');
   }
 }

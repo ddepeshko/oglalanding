@@ -21,7 +21,7 @@ export class CountdownTimerComponent  implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.updateTime();
-    this.intervalId = setInterval(() => this.updateTime(), 1000);
+    // this.intervalId = setInterval(() => this.updateTime(), 1000);
   }
 
   ngOnDestroy() {
@@ -29,9 +29,17 @@ export class CountdownTimerComponent  implements OnInit, OnDestroy {
   }
 
   updateTime() {
+    if (!this.targetDate) {
+      console.error('targetDate is not defined');
+      return;
+    }
     const now = new Date().getTime();
     const distance = this.targetDate.getTime() - now;
-
+    const target = this.targetDate.getTime();
+    if (isNaN(target)) {
+      console.error('Invalid date format in targetDate');
+      return;
+    }
     if (distance > 0) {
       this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
       this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
