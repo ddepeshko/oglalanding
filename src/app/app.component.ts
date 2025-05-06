@@ -4,11 +4,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Inject,
+  OnInit,
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
 import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,7 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
   imports: [CountdownTimerComponent, DatePipe],
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit {
   public targetDate = new Date('2025-05-17T00:00:00');
   public isBrowser = false;
   public baseProgramList = [
@@ -136,7 +138,11 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChild('swiperEl', { static: false }) swiperEl!: ElementRef;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title,
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {
       import('swiper/element/bundle').then(({ register }) => {
@@ -162,5 +168,19 @@ export class AppComponent implements AfterViewInit {
 
   public toggleAnswer(questionTitle: HTMLDivElement): void {
     questionTitle.classList.toggle('selected');
+  }
+
+  ngOnInit(): void {
+    const title = 'Fit Easy — Легка стрункість без дієт та відкатів';
+    const description =
+      "Мінус 2–4 кг і зменшення об'ємів вдома за 14 днів. Перевірена методика без дієт і залу.";
+    this.title.setTitle(title);
+    this.meta.addTags([
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:image', content: 'assets/images/banner-img-small.png' },
+      { property: 'og:url', content: 'https://www.fit-easy.me/' },
+      { property: 'og:type', content: 'website' },
+    ]);
   }
 }
