@@ -14,10 +14,14 @@
       <div class="description">
         Авторська методика від Ольги Депешко, нутріціолога та фітнес-моделі
       </div>
-      <button>
-        Приєднатись
-        <span class="discount">-80%</span>
-      </button>
+      @if (!isMobile) {
+        <div class="join-us-actions">
+          <button>
+            <span>Приєднатись</span>
+            <span class="discount">-80%</span>
+          </button>
+        </div>
+      }
     </div>
     <div class="block-photo images-block">
       <div class="secondary-image-container">
@@ -27,6 +31,14 @@
         <img src="assets/images/banner-img-main.png" alt="olga_depeshko" />
       </div>
     </div>
+    @if (isMobile) {
+      <div class="join-us-actions">
+        <button>
+          <span>Приєднатись</span>
+          <span class="discount">-80%</span>
+        </button>
+      </div>
+    }
   </div>
 </section>
 <section class="join-us container">
@@ -89,12 +101,19 @@
         <div class="description">У тебе обмаль часу, не завжди виходить їздити у фітнес-центр</div>
       </div>
       <div class="view-item">
-        <div class="decor-element"></div>
+        @if (!isMobile) {
+          <div class="decor-element"></div>
+        }
         <div class="icon">
           <img src="assets/icons/reason-icon-2.svg" alt="reasonIcon" width="72" height="66" />
         </div>
         <div class="description">Ти пробувала худнути, але вага поверталася</div>
       </div>
+      @if (isMobile) {
+        <div class="block-photo">
+          <div class="photo"></div>
+        </div>
+      }
       <div class="view-item">
         <div class="decor-element"></div>
         <div class="icon">
@@ -108,13 +127,18 @@
         </div>
         <div class="description">Потребуєш підтримки на шляху до тіла мрії</div>
       </div>
-    </div>
-    <div class="block-photo">
-      <div class="photo"></div>
       <div class="reason-item-adds">
         <div class="text">Це найшвидший маршрут від точки А до тіла мрії</div>
       </div>
     </div>
+    @if (!isMobile) {
+      <div class="block-photo">
+        <div class="photo"></div>
+        <div class="reason-item-adds">
+          <div class="text">Це найшвидший маршрут від точки А до тіла мрії</div>
+        </div>
+      </div>
+    }
   </div>
 </section>
 <section id="about-me" class="about-me">
@@ -126,29 +150,62 @@
     <div class="content-wrapper">
       <div class="info-block">
         <div class="info-block-title">Ольга Депешко</div>
-        <div class="info-list">
-          <div class="list-item">
-            <span class="icon"></span>Фітнес-тренер
-            <span class="chips"><span class="text">12-річним досвідом</span></span>
+        @if (!isMobile) {
+          <div class="info-list">
+            <div class="list-item">
+              <span class="icon"></span>Фітнес-тренер
+              <span class="chips"><span class="text">12-річним досвідом</span></span>
+            </div>
+            <div class="list-item">
+              <span class="icon"></span>Сертифікований нутриціолог
+              <span class="chips"><span class="text">5-річним досвідом</span> </span>
+            </div>
+            <div class="list-item">
+              <span class="icon"></span> Віце-чемпіонка України у категорії «Фітнес-Модель»
+            </div>
           </div>
-          <div class="list-item">
-            <span class="icon"></span>Сертифікований нутриціолог
-            <span class="chips"><span class="text">5-річним досвідом</span> </span>
+          <div class="chips-list">
+            <span class="chips"><span class="text">Корекція фігури</span></span>
+            <span class="chips"><span class="text">Силові тренування</span></span>
+            <span class="chips"><span class="text">TRX</span></span>
           </div>
-          <div class="list-item">
-            <span class="icon"></span> Віце-чемпіонка України у категорії «Фітнес-Модель»
+          <div class="chips-list">
+            <span class="chips"><span class="text">МФР</span></span>
+            <span class="chips"><span class="text">Реабілітація</span></span>
+            <span class="chips"><span class="text">Танцювальний фітнес</span></span>
           </div>
-        </div>
-        <div class="chips-list">
-          <span class="chips"><span class="text">Корекція фігури</span></span>
-          <span class="chips"><span class="text">Силові тренування</span></span>
-          <span class="chips"><span class="text">TRX</span></span>
-        </div>
-        <div class="chips-list">
-          <span class="chips"><span class="text">МФР</span></span>
-          <span class="chips"><span class="text">Реабілітація</span></span>
-          <span class="chips"><span class="text">Танцювальний фітнес</span></span>
-        </div>
+        } @else {
+          <div class="chips-list">
+            <span class="chips"><span class="text">Корекція фігури</span></span>
+            <span class="chips"><span class="text">Силові тренування</span></span>
+            <span class="chips"><span class="text">TRX</span></span>
+          </div>
+          <div class="chips-list">
+            <span class="chips"><span class="text">МФР</span></span>
+            <span class="chips"><span class="text">Реабілітація</span></span>
+            <span class="chips"><span class="text">Танцювальний фітнес</span></span>
+          </div>
+          <div class="mobile-info">
+            <div class="info-item">
+              <div class="item-title">Фітнес-тренер</div>
+              <div class="chips"><span class="text">12-річним досвідом</span></div>
+              <div class="photo photo-first"></div>
+            </div>
+            <div class="info-item">
+              <div class="item-title">Сертифікований нутриціолог</div>
+              <div class="chips"><span class="text"> 5-річним досвідом</span></div>
+
+              <div class="photo photo-third"></div>
+            </div>
+            <div class="info-item">
+              <div class="item-title">
+                Віце-чемпіонка України у категорії <span class="text-medium">«Фітнес-Модель»</span>
+              </div>
+              <div class="photo photo-second"></div>
+            </div>
+          </div>
+        }
+
         <div class="join-us-actions">
           <button>
             <span>Приєднатись</span>
@@ -156,13 +213,15 @@
           </button>
         </div>
       </div>
-      <div class="block-photo">
-        <div class="photos-wrapper">
-          <div class="photo-first"></div>
-          <div class="photo-second"></div>
-          <div class="photo-third"></div>
+      @if (!isMobile) {
+        <div class="block-photo">
+          <div class="photos-wrapper">
+            <div class="photo photo-first"></div>
+            <div class="photo photo-second"></div>
+            <div class="photo photo-third"></div>
+          </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </section>
@@ -172,9 +231,12 @@
     <div class="title-text">Стань стрункішою легко та без зусиль!</div>
   </div>
   <div class="content-wrapper">
-    <div class="content-block image">
-      <div class="decorated-image"></div>
-    </div>
+    @if (!isMobile) {
+      <div class="content-block image">
+        <div class="decorated-image"></div>
+      </div>
+    }
+
     <div class="content-block">
       <div class="view-item xl">
         <div class="icon">
@@ -188,6 +250,9 @@
         </div>
         <div class="description">Без жорстких дієт</div>
       </div>
+      @if (isMobile) {
+        <div class="decorated-image"></div>
+      }
       <div class="view-item xl">
         <div class="icon">
           <img src="assets/icons/reason-icon-1.svg" alt="reasonIcon" width="72" height="66" />

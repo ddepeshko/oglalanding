@@ -8,9 +8,12 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
-import { DatePipe, isPlatformBrowser } from '@angular/common';
+import { DatePipe, isPlatformBrowser, NgClass } from '@angular/common';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { fromEvent, map, startWith } from 'rxjs';
+
+const MOBILE_VIEWPORT_SIZE = 769;
 
 @Component({
   selector: 'app-root',
@@ -135,9 +138,9 @@ export class AppComponent implements OnInit, AfterViewInit {
         'У кожній вправі передбачені різні варіації виконання.',
     },
   ];
+  public isMobile = false;
 
   @ViewChild('swiperEl', { static: false }) swiperEl!: ElementRef;
-
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
@@ -151,10 +154,21 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
   public ngAfterViewInit(): void {
-    if (this.isBrowser && this.swiperEl?.nativeElement) {
-      setTimeout(() => {
-        this.swiperEl.nativeElement.swiper?.update();
-      }, 100);
+    if (this.isBrowser) {
+      fromEvent(window, 'resize')
+        .pipe(
+          startWith(null),
+          map(() => window.innerWidth),
+        )
+        .subscribe((windowSize) => {
+          console.log(windowSize);
+          this.isMobile = windowSize < MOBILE_VIEWPORT_SIZE;
+        });
+      if (this.swiperEl?.nativeElement) {
+        setTimeout(() => {
+          this.swiperEl.nativeElement.swiper?.update();
+        }, 100);
+      }
     }
   }
 
