@@ -5,19 +5,17 @@ import {
   ElementRef,
   Inject,
   PLATFORM_ID,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
-import {CountdownTimerComponent} from './components/countdown-timer/countdown-timer.component';
+import { DatePipe, isPlatformBrowser } from '@angular/common';
+import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [
-    CountdownTimerComponent
-  ],
-  styleUrl: './app.component.scss'
+  imports: [CountdownTimerComponent, DatePipe],
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
   public targetDate = new Date('2025-05-17T00:00:00');
@@ -41,93 +39,100 @@ export class AppComponent implements AfterViewInit {
     'Індивідуальний смачний  раціон харчування з веденням на два тижні.',
     'Міні-консультація щодо програми індивідуальних тренувань для Вашої фітнес-цілі.',
     'Доступ до курсу  2 місяці.',
-
   ];
   public resultsViewItemConfig = [
     {
       icon: 'assets/icons/sort-down-icon.svg',
-      text: 'Легке та здорове зниження ваги (жир + зменшення набряків)'
+      text: 'Легке та здорове зниження ваги (жир + зменшення набряків)',
     },
     {
       icon: 'assets/icons/flash-icon.svg',
-      text: 'Збільшення енергії, покращення самопочуття'
-    }  ,
+      text: 'Збільшення енергії, покращення самопочуття',
+    },
     {
       icon: 'assets/icons/reason-icon-3.svg',
-      text: 'Зниження тяги до солодкого та шкідливої їжі'
+      text: 'Зниження тяги до солодкого та шкідливої їжі',
     },
     {
       icon: 'assets/icons/reason-icon-2.svg',
-      text: 'Нові стрункі харчові звички'
+      text: 'Нові стрункі харчові звички',
     },
     {
       icon: 'assets/icons/action-icon.svg',
-      text: 'Поліпшення тонусу тіла та витривалості'
+      text: 'Поліпшення тонусу тіла та витривалості',
     },
     {
       icon: 'assets/icons/food-icon.svg',
-      text: 'Розуміння, як тренуватися і харчуватися для збереження форми'
+      text: 'Розуміння, як тренуватися і харчуватися для збереження форми',
     },
     {
       icon: 'assets/icons/lovely-icon.svg',
-      text: 'Захопливі погляди від чоловіків'
+      text: 'Захопливі погляди від чоловіків',
     },
-  ]
+  ];
   public slides = [
     {
       photo: 'assets/images/user-1.png',
       name: 'Вікторія',
-      text: 'Дякую за чудовий курс! \n' +
+      text:
+        'Дякую за чудовий курс! \n' +
         '\n' +
         'Мінус 2 кг, -1,5 см у талії та стегнах. \n' +
         '\n' +
-        'Відчуваю легкість!'
+        'Відчуваю легкість!',
     },
     {
       photo: 'assets/images/user-2.png',
       name: 'Світлана',
-      text: 'Курс неймовірний! \n' +
+      text:
+        'Курс неймовірний! \n' +
         '\n' +
-        'Почала правильно харчуватися, зникли набряки, з\'явилося більше енергії!'
+        "Почала правильно харчуватися, зникли набряки, з'явилося більше енергії!",
     },
     {
       photo: 'assets/images/user-3.png',
       name: 'Анна',
-      text: 'Зрозуміла, як бути у формі постійно. \n' +
+      text:
+        'Зрозуміла, як бути у формі постійно. \n' +
         '\n' +
-        'Мінус 2 кг, легкість у тілі та енергія!'
+        'Мінус 2 кг, легкість у тілі та енергія!',
     },
   ];
   public questions = [
     {
       title: 'Немає часу на курс. Що робити?',
-      description: 'Уроки курсу легкі та цікаві, займають мінімум часу. \n' +
+      description:
+        'Уроки курсу легкі та цікаві, займають мінімум часу. \n' +
         '\n' +
         'Тренування та гімнастика не потребують багато часу, а завдяки курсу у вас з’явиться більше енергії на всі справи.',
     },
     {
       title: 'А якщо у мене проблеми з суглобами?',
-      description: 'Комплекс вправ розроблений з урахуванням можливих обмежень по здоров’ю. \n' +
+      description:
+        'Комплекс вправ розроблений з урахуванням можливих обмежень по здоров’ю. \n' +
         '\n' +
         'У кожній вправі передбачені різні варіації виконання.',
     },
     {
       title: 'А якщо раціон мені не підійде?',
-      description: 'План харчування включає 14 різноманітних варіантів. \n' +
+      description:
+        'План харчування включає 14 різноманітних варіантів. \n' +
         '\n' +
         'Ви можете обрати ті страви, що найбільше вам підходять, або повторювати улюблені.',
     },
     {
       title: 'А якщо у мене немає часу готувати?',
-      description: 'Страви в раціоні прості у приготуванні та не вимагають багато часу чи складних інгредієнтів.',
+      description:
+        'Страви в раціоні прості у приготуванні та не вимагають багато часу чи складних інгредієнтів.',
     },
     {
       title: 'А якщо у мене проблеми з суглобами?',
-      description: 'Комплекс вправ розроблений з урахуванням можливих обмежень по здоров’ю. \n' +
+      description:
+        'Комплекс вправ розроблений з урахуванням можливих обмежень по здоров’ю. \n' +
         '\n' +
         'У кожній вправі передбачені різні варіації виконання.',
     },
-  ]
+  ];
 
   @ViewChild('swiperEl', { static: false }) swiperEl!: ElementRef;
 
@@ -155,8 +160,7 @@ export class AppComponent implements AfterViewInit {
     this.swiperEl?.nativeElement.swiper?.slidePrev();
   }
 
-
-  public toggleAnswer(questionTitle: HTMLDivElement):void {
+  public toggleAnswer(questionTitle: HTMLDivElement): void {
     questionTitle.classList.toggle('selected');
   }
 }

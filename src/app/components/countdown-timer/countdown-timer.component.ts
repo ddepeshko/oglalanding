@@ -1,12 +1,10 @@
-import {Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
-import {DecimalPipe, isPlatformBrowser} from '@angular/common';
+import { Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { DecimalPipe, isPlatformBrowser } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-countdown-timer',
-  imports: [
-    DecimalPipe
-  ],
+  imports: [DecimalPipe],
   templateUrl: './countdown-timer.component.html',
   styleUrl: './countdown-timer.component.scss',
   standalone: true,
