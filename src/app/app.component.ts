@@ -20,7 +20,8 @@ import {CountdownTimerComponent} from './components/countdown-timer/countdown-ti
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
-  isBrowser = false;
+  public targetDate = new Date('2025-05-17T00:00:00');
+  public isBrowser = false;
   public baseProgramList = [
     'Постановка Цілі. Точка А. Заміри. Текстове завдання.',
     'Перелік необхідних продуктів, загальне меню на два тижні.',
@@ -142,7 +143,7 @@ export class AppComponent implements AfterViewInit {
     if (this.isBrowser && this.swiperEl?.nativeElement) {
       setTimeout(() => {
         this.swiperEl.nativeElement.swiper?.update();
-      }, 100); // трохи почекати після рендеру
+      }, 100);
     }
   }
 

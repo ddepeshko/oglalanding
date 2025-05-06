@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {DecimalPipe, isPlatformBrowser} from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { interval, Subscription } from 'rxjs';
   standalone: true,
 })
 export class CountdownTimerComponent implements OnInit, OnDestroy {
-  targetDate = new Date('2025-05-15T00:00:00');
+  @Input() targetDate = new Date('2025-05-17T00:00:00');
   subscription: Subscription = new Subscription();
 
   days: number = 0;
