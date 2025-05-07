@@ -441,6 +441,7 @@
 
   <div class="content-wrapper">
     @if (isBrowser) {
+      @if (!isMobile) {
       <swiper-container #swiperEl slides-per-view="2.5" space-between="32" class="mySwiper">
         @for (slide of slides; track $index) {
           <swiper-slide>
@@ -461,10 +462,34 @@
           </swiper-slide>
         }
       </swiper-container>
+      } @else {
+        <swiper-container #swiperEl slides-per-view="1" space-between="4" class="mySwiper">
+          @for (slide of slides; track $index) {
+            <swiper-slide>
+              <div class="feedback-card">
+                <div class="feedback-card-inner">
+                  <div class="header">
+                    <img [src]="slide.photo" alt="avatar" class="avatar" />
+                    <div class="name-stars">
+                      <div class="name">{{ slide.name }}</div>
+                      <div class="stars">★★★★★</div>
+                    </div>
+                  </div>
+                  <div class="description">
+                    {{ slide.text }}
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          }
+        </swiper-container>
+      }
+      @if (!isMobile) {
       <div class="navigation">
         <button class="previous-btn" (click)="prevSlide()"></button>
         <button class="next-btn" (click)="nextSlide()"></button>
       </div>
+      }
     }
   </div>
 </section>

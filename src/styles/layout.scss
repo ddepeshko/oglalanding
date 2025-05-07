@@ -1342,8 +1342,11 @@ footer {
       }
     }
   }
-  .feedback-card {
-    max-width: 284px;
+
+  swiper-slide {
+    max-width: unset;
+    padding: 0 32px;
+    box-sizing: border-box;
   }
   .questions-list .question .question-title {
     font-size: 20px;
