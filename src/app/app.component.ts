@@ -2,7 +2,9 @@ import {
   AfterViewInit,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  DestroyRef,
   ElementRef,
+  inject,
   Inject,
   OnInit,
   PLATFORM_ID,
@@ -12,6 +14,7 @@ import { DatePipe, isPlatformBrowser, NgClass } from '@angular/common';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { Meta, Title } from '@angular/platform-browser';
 import { fromEvent, map, startWith } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 const MOBILE_VIEWPORT_SIZE = 769;
 
@@ -139,6 +142,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     },
   ];
   public isMobile = false;
+  private destroyRef = inject(DestroyRef);
 
   @ViewChild('swiperEl', { static: false }) swiperEl!: ElementRef;
   constructor(
@@ -159,9 +163,9 @@ export class AppComponent implements OnInit, AfterViewInit {
         .pipe(
           startWith(null),
           map(() => window.innerWidth),
+          takeUntilDestroyed(this.destroyRef),
         )
         .subscribe((windowSize) => {
-          console.log(windowSize);
           this.isMobile = windowSize < MOBILE_VIEWPORT_SIZE;
         });
       if (this.swiperEl?.nativeElement) {

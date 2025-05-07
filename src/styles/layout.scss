@@ -38,6 +38,7 @@ header {
 
 .banner-block {
   margin-top: 12px;
+  overflow: hidden;
   .banner-title {
     font-size: 48px;
     font-weight: 500;
@@ -259,9 +260,10 @@ header {
     }
   }
   .decorated-image {
-    width: 488px;
+    max-width: 488px;
+    width: 100%;
     height: 640px;
-    background: url('../assets/images/add-info-photo.png') no-repeat center center/contain;
+    background: url('../assets/images/add-info-photo.png') no-repeat top center/cover;
     border-radius: 32px;
     position: relative;
     &:after {
@@ -922,6 +924,19 @@ footer {
     padding-bottom: 28px;
     gap: 0 120px;
   }
+
+  a {
+    color: $black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 16px;
+    &:hover {
+      color: $pink700;
+    }
+  }
   .menu,
   .contacts {
     font-family: 'Montserrat', sans-serif;
@@ -930,18 +945,7 @@ footer {
       margin-bottom: 48px;
     }
     .contact-item {
-      a {
-        color: $black;
-        text-decoration: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 0 16px;
-        &:hover {
-          color: $pink700;
-        }
-      }
+
       & + .contact-item {
         margin-top: 32px;
       }
@@ -987,6 +991,18 @@ footer {
     }
     .join-us-actions {
       margin-top: 0;
+    }
+  }
+  .politics {
+    padding-top:48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    a {
+      font-size: 12px;
     }
   }
 }
@@ -1266,6 +1282,7 @@ footer {
       gap: 12px;
       font-size: 14px;
       justify-content: center;
+      flex-wrap: wrap;
 
       & + .chips-list {
         margin-top: 12px;
@@ -1284,6 +1301,7 @@ footer {
     }
     .decorated-image {
       margin: 32px 0 0;
+      max-height: 75vh;
       &:before,
       &:after {
         display: none;
@@ -1301,6 +1319,34 @@ footer {
         width: 100%;
         flex: unset;
       }
+    }
+  }
+  .course-program {
+    .program-title {
+      font-size: 24px;
+      padding: 18px 54px;
+      border-radius: 16px;
+      .inner-text {
+        max-width: 224px;
+      }
+    }
+    .pricing-wrapper {
+      .old-price {
+      font-size: 16px;
+      }
+      .new-price {
+        font-size: 24px;
+      }
+    }
+  }
+  footer {
+    .join-us-actions {
+      button {
+        margin-top: 24px;
+      }
+    }
+    &:after {
+      display: none;
     }
   }
 }
