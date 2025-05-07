@@ -10,7 +10,7 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
-import { DatePipe, isPlatformBrowser, NgClass } from '@angular/common';
+import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { Meta, Title } from '@angular/platform-browser';
 import { fromEvent, map, startWith } from 'rxjs';
@@ -27,6 +27,7 @@ const MOBILE_VIEWPORT_SIZE = 769;
 })
 export class AppComponent implements OnInit, AfterViewInit {
   public targetDate = new Date('2025-05-17T00:00:00');
+  slidesPerView = 2.5;
   public isBrowser = false;
   public baseProgramList = [
     'Постановка Цілі. Точка А. Заміри. Текстове завдання.',

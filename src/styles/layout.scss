@@ -1039,6 +1039,9 @@ footer {
   .join-us-adds,
   .benefits {
     flex-direction: column;
+    .content-wrapper {
+      flex-direction: column;
+    }
     .join-us-actions {
       margin-top: 24px;
     }
@@ -1071,7 +1074,7 @@ footer {
       font-weight: 400;
     }
   }
-  .course-for {
+  .course-for{
     .view-item {
       &:nth-child(odd) {
         .decor-element {
@@ -1339,7 +1342,34 @@ footer {
       }
     }
   }
+  .feedback-card {
+    max-width: 284px;
+  }
+  .questions-list .question .question-title {
+    font-size: 20px;
+    padding-right: 40px;
+  }
+  .results {
+    .view-item {
+      width: 100%;
+      &:nth-child(odd) {
+        .decor-element {
+          top: 100%;
+          right: 50%;
+        }
+      }
+      &:nth-child(even) {
+        .decor-element {
+          top: 100%;
+          left: 50%;
+        }
+      }
+    }
+  }
   footer {
+    .content-wrapper {
+      gap: 48px 64px;
+    }
     .join-us-actions {
       button {
         margin-top: 24px;
