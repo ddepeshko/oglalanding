@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { OfertaPageComponent } from './modules/oferta-page/oferta-page.component';
+import { MainPageComponent } from './modules/main-page/main-page.component';
 
 export const routes: Routes = [
-  { path: 'oglalanding', component: AppComponent },
+  { path: '', component: MainPageComponent },
+  { path: 'oferta-page', component: OfertaPageComponent },
   { path: '', redirectTo: '', pathMatch: 'full' },
 ];

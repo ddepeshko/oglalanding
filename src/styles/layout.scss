@@ -461,7 +461,8 @@ header {
 
 button {
   padding: 21px 0;
-  width: 384px;
+  max-width: 384px;
+  width: 100%;
   text-align: center;
   position: relative;
   background: $purple400;
@@ -921,7 +922,8 @@ footer {
   .content-wrapper {
     margin-top: 12px;
     padding-bottom: 28px;
-    gap: 0 120px;
+    gap: 0 86px;
+    flex-wrap: nowrap;
   }
 
   a {
@@ -964,6 +966,7 @@ footer {
   }
   .join-us {
     margin-left: auto;
+    padding: 0 32px;
     .title {
       font-weight: 500;
       max-width: 312px;
@@ -1007,7 +1010,8 @@ footer {
 }
 
 .timer-block {
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
@@ -1090,6 +1094,9 @@ footer {
     }
   }
   footer {
+    .content-wrapper {
+      flex-wrap: wrap;
+    }
     .timer-block {
       display: flex;
       justify-content: center;
