@@ -10,5 +10,5 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  public targetDate = new Date('2025-05-17T00:00:00');
+  public targetDate = new Date('2025-05-19T00:00:00');
 }
