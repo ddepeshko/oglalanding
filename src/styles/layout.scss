@@ -460,7 +460,7 @@ header {
 // UI elements
 
 button {
-  padding: 21px 0;
+  padding: 21px 64px;
   max-width: 384px;
   width: 100%;
   text-align: center;
@@ -470,6 +470,10 @@ button {
   border: 0;
   font-size: 24px;
   transition: all 0.3s;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   &:hover {
     background:
       radial-gradient(94.79% 94.79% at 0% 21.83%, #e5d3e9 1.49%, #f974ab 84.26%)
