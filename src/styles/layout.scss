@@ -474,7 +474,6 @@ button {
   a {
     color: inherit;
     text-decoration: none;
-    text-align: center;
   }
   &:hover {
     background:
@@ -925,6 +924,11 @@ swiper-slide {
 footer {
   background: $pink400;
   position: relative;
+  .join-us-actions {
+    a {
+      justify-content: center;
+    }
+  }
   .content-wrapper {
     margin-top: 12px;
     padding-bottom: 28px;
