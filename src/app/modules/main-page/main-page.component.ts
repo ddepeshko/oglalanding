@@ -24,7 +24,7 @@ const MOBILE_VIEWPORT_SIZE = 769;
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent implements OnInit, AfterViewInit {
-  public targetDate = new Date('2025-05-29T00:00:00');
+  public targetDate = new Date('2025-06-02T00:00:00');
   public isBrowser = false;
   public baseProgramList = [
     'Постановка Цілі. Точка А. Заміри. Текстове завдання.',
