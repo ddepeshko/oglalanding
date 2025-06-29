@@ -3,10 +3,10 @@
   <div class="subtitle">Онлайн-Курс</div>
 </header>
 <section class="banner-block container">
-  <div class="banner-title">«Тіло — мрія»</div>
+  <div class="banner-title">Міні-Курс «Плоский живіт»</div>
   <div class="banner-subtitle">
     <span class="decoration decoration-front"></span>
-    Мінус 2–4 кг і зменшення об'ємів вдома за 14 днів. Перевірена методика без дієт і залу.
+    Вже за 7 днів отримай мінус в см та чіткий Алгоритм до Тіла з плоским животиком! Відчуй Легкість та впевненість у Собі!
     <span class="decoration decoration-back"></span>
   </div>
   <div class="content-wrapper">
@@ -17,7 +17,7 @@
       @if (!isMobile) {
         <div class="join-us-actions">
           <button>
-            <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
+            <a [href]="paymentLink" target="_blank">Приєднатись</a>
             <span class="discount">-80%</span>
           </button>
         </div>
@@ -34,7 +34,7 @@
     @if (isMobile) {
       <div class="join-us-actions">
         <button>
-          <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
+          <a [href]="paymentLink" target="_blank">Приєднатись</a>
           <span class="discount">-80%</span>
         </button>
       </div>
@@ -58,8 +58,8 @@
         <div class="icon">
           <img src="assets/icons/present-icon.svg" />
         </div>
-        <div class="title">Тренування на мʼязи кору для тонкої талії</div>
-        <div class="description">З мінімальним інвентарем для дому.</div>
+        <div class="title">Авторське тренування</div>
+        <div class="description">Тонка талія і гарний животик.</div>
       </div>
       <div class="benefit-item">
         <div class="icon">
@@ -74,13 +74,13 @@
         </div>
         <div class="title">Чек-ліст</div>
         <div class="description">
-          “Секретні аналоги суперфудів для зниження ваги та міцного здоров'я”
+          ТОП-страв та продуктів від вздуття та важкості після їжі.
         </div>
       </div>
     </div>
     <div class="join-us-actions">
       <button>
-        <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
+        <a [href]="paymentLink" target="_blank">Приєднатись</a>
         <span class="discount">-80%</span>
       </button>
     </div>
@@ -98,7 +98,7 @@
         <div class="icon">
           <img src="assets/icons/reason-icon-1.svg" alt="reasonIcon" width="72" height="66" />
         </div>
-        <div class="description">У тебе обмаль часу, не завжди виходить їздити у фітнес-центр</div>
+        <div class="description">Хто хоче знизити обʼєми в області талії та живота</div>
       </div>
       <div class="view-item">
         @if (!isMobile) {
@@ -107,7 +107,7 @@
         <div class="icon">
           <img src="assets/icons/reason-icon-2.svg" alt="reasonIcon" width="72" height="66" />
         </div>
-        <div class="description">Ти пробувала худнути, але вага поверталася</div>
+        <div class="description">Хто хоче налагодити харчування і перестати заїдати</div>
       </div>
       @if (isMobile) {
         <div class="block-photo">
@@ -119,17 +119,17 @@
         <div class="icon">
           <img src="assets/icons/reason-icon-3.svg" alt="reasonIcon" width="72" height="66" />
         </div>
-        <div class="description">Харчуєшся хаотично та хочеш легко налагодити режим</div>
+        <div class="description">Хто схуд, а живіт так і лишився</div>
       </div>
       <div class="view-item">
         <div class="icon">
           <img src="assets/icons/reason-icon-4.svg" alt="reasonIcon" width="72" height="66" />
         </div>
-        <div class="description">Потребуєш підтримки на шляху до тіла мрії</div>
+        <div class="description">Кого тривожить вздуття та дискомфорт</div>
       </div>
       @if (isMobile) {
         <div class="reason-item-adds">
-          <div class="text">Це найшвидший маршрут від точки А до тіла мрії</div>
+          <div class="text">Хто хоче знизити вагу в цілому, придбати набряки</div>
         </div>
       }
     </div>
@@ -137,7 +137,7 @@
       <div class="block-photo">
         <div class="photo"></div>
         <div class="reason-item-adds">
-          <div class="text">Це найшвидший маршрут від точки А до тіла мрії</div>
+          <div class="text">Хто хоче знизити вагу в цілому, придбати набряки</div>
         </div>
       </div>
     }
@@ -208,7 +208,7 @@
 
         <div class="join-us-actions">
           <button>
-            <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
+            <a [href]="paymentLink" target="_blank">Приєднатись</a>
             <span class="discount">-80%</span>
           </button>
         </div>
@@ -275,27 +275,26 @@
   </div>
   <div class="wrapper first-block">
     <div class="view-item large">
-      <div class="description">Відео-уроки ранкової гімнастики з лімфљодренажним ефектом.</div>
+      <div class="description">Плану харчування для зменшення живота, приклади трапез на 7 днів.</div>
     </div>
     <div class="view-item large">
       <div class="description">
-        Доступ до Чату Курсу з Полем однодумців та Моєю особистою підтримкою 🔥
+        Програми тренувань для корегування Фігури та зниження % жиру.
       </div>
     </div>
     <div class="view-item large">
       <div class="description">
-        Аудіо та відео-уроки про основи стрункого харчування, складання харчової тарілки,
-        рекомендації до фізичних навантажень та режиму дня
+        План тренування +Вправи для Роботи з Поставою (від випираючого Живота)
       </div>
     </div>
   </div>
   <div class="wrapper second-block">
     <div class="view-item">
-      <div class="description">Загального меню️ на два тижні</div>
+      <div class="description">Рекомендації щодо Якісного Сну та зниження рівня стресу</div>
     </div>
     <div class="view-item">
       <div class="description">
-        Домашні  тренування
+        Доступ до Чату Курсу з Полем однодумців та Моєю особистою підтримкою 🔥завдання
       </div>
     </div>
   </div>
@@ -316,43 +315,12 @@
           </div>
         }
         <div class="pricing-wrapper">
-          <div class="old-price">3450 грн</div>
-          <div class="new-price">690 грн</div>
+          <div class="old-price">2450 грн</div>
+          <div class="new-price">490 грн</div>
         </div>
         <div class="join-us-actions centered">
           <button>
-            <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
-            <span class="discount">-80%</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="program program-extended">
-      <div class="program-title">
-        <div class="inner-text">Тариф «ПРЕМІУМ»</div>
-      </div>
-      <div class="program-list">
-        @for (listItem of baseProgramList; track listItem; let idx = $index) {
-          <div class="list-item">
-            <div class="step">{{ idx + 1 < 10 ? '0' : '' }}{{ idx + 1 }}</div>
-            <div class="description">{{ listItem }}</div>
-          </div>
-        }
-        <div class="extended-items-wrapper">
-          @for (listItem of extendedProgramList; track listItem; let idx = $index) {
-            <div class="list-item">
-              <div class="step">{{ baseProgramList.length + idx + 1 }}</div>
-              <div class="description">{{ listItem }}</div>
-            </div>
-          }
-        </div>
-        <div class="pricing-wrapper">
-          <div class="old-price">8450 грн</div>
-          <div class="new-price">1690 грн</div>
-        </div>
-        <div class="join-us-actions centered">
-          <button>
-            <a href="https://secure.wayforpay.com/payment/fiteasyme1" target="_blank">Приєднатись</a>
+            <a [href]="paymentLink" target="_blank">Приєднатись</a>
             <span class="discount">-80%</span>
           </button>
         </div>
@@ -399,7 +367,7 @@
     </div>
     <div class="join-us-actions">
       <button>
-        <a href="https://secure.wayforpay.com/payment/httpswwwfiteasyme" target="_blank">Приєднатись</a>
+        <a [href]="paymentLink" target="_blank">Приєднатись</a>
         <span class="discount">-80%</span>
       </button>
     </div>
