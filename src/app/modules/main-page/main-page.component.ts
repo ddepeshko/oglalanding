@@ -183,9 +183,9 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const title = 'Fit Easy — Легка стрункість без дієт та відкатів';
+    const title = 'Fit Easy — Міні-Курс «Плоский живіт»';
     const description =
-      "Мінус 2–4 кг і зменшення об'ємів вдома за 14 днів. Перевірена методика без дієт і залу.";
+      'Вже за 7 днів отримай мінус в см та чіткий Алгоритм до Тіла з плоским животиком! Відчуй Легкість та впевненість у Собі!';
     this.title.setTitle(title);
     this.meta.addTags([
       { property: 'og:title', content: title },
