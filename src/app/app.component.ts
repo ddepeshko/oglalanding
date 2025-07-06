@@ -10,6 +10,6 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  public targetDate = new Date('2025-07-06T00:00:00');
+  public targetDate = new Date('2025-07-13T00:00:00');
   public paymentLink: string = 'http://secure.wayforpay.com/payment/httpswwwfiteasyme';
 }

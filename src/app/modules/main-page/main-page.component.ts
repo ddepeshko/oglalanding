@@ -25,7 +25,7 @@ const MOBILE_VIEWPORT_SIZE = 769;
 })
 export class MainPageComponent implements OnInit, AfterViewInit {
   public paymentLink: string = 'http://secure.wayforpay.com/payment/httpswwwfiteasyme';
-  public targetDate = new Date('2025-07-06T00:00:00');
+  public targetDate = new Date('2025-07-13T00:00:00');
   public isBrowser = false;
   public baseProgramList = [
     'День 1. Точка А і точка Б. Урок «Алгоритм створення Тіла з Плоским животом та тонкою талією».',
@@ -183,9 +183,9 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const title = 'Fit Easy — Міні-Курс «Плоский живіт»';
+    const title = 'Fit Easy — Міні-Курс «Плоский живіт і Тонка Талія»';
     const description =
-      'Вже за 7 днів отримай мінус в см та чіткий Алгоритм до Тіла з плоским животиком! Відчуй Легкість та впевненість у Собі!';
+      'Отримай мінус см в Талії та Алгоритм для Буття в Гарному Тілі вже за 9 днів! Відчуй впевненість та любов до Власного Тіла.';
     this.title.setTitle(title);
     this.meta.addTags([
       { property: 'og:title', content: title },
